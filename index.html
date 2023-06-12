@@ -8,13 +8,15 @@
 </head>
 <body>
 
- <iframe src="http://182.47.189.178:7454/" id="main" width="700" height="300" frameborder="0" scrolling="auto"></iframe>
+ <iframe id="mainframe" name="mainframe" marginwidth="0" marginheight="0" src="http://182.47.189.178:7454/" frameborder="0" width="100%" scrolling="no" height="100%"></iframe>
+<script type="text/javascript">
  
- //注意：下面的代码是放在和iframe同一个页面调用
-$("#main").load(function(){
-var mainheight = $(this).contents().find("body").height()+30;
-$(this).height(mainheight);
-}); 
+//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
+$("#mainframe").load(function () {
+var mainheight = $(this).contents().find("body").height() + 30;
+ $(this).height(mainheight);
+});
+</script>
  
  </body>
 </html>
