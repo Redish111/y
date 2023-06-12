@@ -1,22 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
- <meta charset="utf-8">
- <meta name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
- <title>云端图床</title>
-
+    <meta charset="UTF-8">
+    <title>Jump To Page</title>
 </head>
+<style>
+    p{
+        text-align: center;
+    }
+    #time{
+        color: red;
+    }
+</style>
 <body>
+    <p>
+        <span id="time">5</span>秒后跳转
+    </p>
 
- <iframe id="mainframe" name="mainframe" marginwidth="0" marginheight="0" src="http://182.47.189.178:7454/" frameborder="0" width="100%" scrolling="no" height="100%"></iframe>
-<script type="text/javascript">
- 
-//注意：下面的代码是放在和iframe同一个页面调用,放在iframe下面
-$("#mainframe").load(function () {
-var mainheight = $(this).contents().find("body").height() + 30;
- $(this).height(mainheight);
-});
+<script>
+    var second=5;
+    var time = document.getElementById("time");
+    function show() {
+        second--;
+        if(second==0){
+            //跳转页面
+            location.href="http://182.47.189.178:7454/";
+        }
+        //用来动态设置里面的内容
+        time.innerHTML=second+"";
+
+    }
+    //用来实现这个一秒实现一次这个方法
+    setInterval(show,1000);
+    
+
 </script>
- 
- </body>
+
+</body>
 </html>
