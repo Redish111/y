@@ -8,25 +8,12 @@
 </head>
 <body>
 
-<br>
-
-<div class="iframe My-home embed-responsive embed-responsive-16by9">
-     <iframe class="embed-responsive-item" frameborder="0" id="form-iframe" src="http://182.47.189.178:7454/"></iframe>
-      <!--src是动态赋值的-->
-</div>
-  
-  //根据ID获取iframe对象
-    var org = $("#form-iframe")
-    org.onload = function () {
-        //解决打开高度太高的页面后再打开高度较小页面滚动条不收缩
-        org.style.height = '0px';
-        var iDoc = org.contentDocument || org.document
-        var height = calcPageHeight(iDoc)
-        if (height < 850) {
-            height = 850;
-        }
-        org.style(height, height + 'px')
-    }
-
+<iframe id="index php"
+    title="CLDP"
+    width= full
+    height= full
+    src="http://182.47.189.178:7454/">
+</iframe>
+ 
  </body>
 </html>
